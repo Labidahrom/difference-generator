@@ -14,6 +14,13 @@ def get_value(string):
     return string[string.find(':') + 1:]
 
 
+def change_third_sigh(list, sign):
+    new_list = []
+    for string in list:
+        new_list.append(sign + string[1:])
+    return new_list
+
+
 def generate_diff(file_1, file_2):
     first_dict = make_dict_from_json(file_1)
     second_dict = make_dict_from_json(file_2)
@@ -24,10 +31,12 @@ def generate_diff(file_1, file_2):
     output = []
     while first_index != len(first_dict) or second_index != len(second_dict):
         if first_index == len(first_dict):
-            output.extend(second_dict[second_index:])
+            rest_of_list = change_third_sigh(second_dict[second_index:], '+')
+            output.extend(rest_of_list)
             break
         elif second_index == len(second_dict):
-            output.extend(first_dict[first_index:])
+            rest_of_list = change_third_sigh(first_dict[first_index:], '-')
+            output.extend(rest_of_list)
             break
         if first_dict[first_index] == second_dict[second_index]:
             output.append(first_dict[first_index])
