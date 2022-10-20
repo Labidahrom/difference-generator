@@ -1,4 +1,5 @@
 import argparse
+from make_gendiff import generate_diff
 
 parser = argparse.ArgumentParser(description='Compares two configuration files and shows a difference.')
 parser.add_argument('first_file')
@@ -8,3 +9,8 @@ args = parser.parse_args()
 print(args.accumulate(args.integers))
 if args.format:
     print("set format of output")
+file_1 = args.first_file
+file_2 = args.second_file
+
+
+generate_diff(file_1, file_2)
