@@ -15,10 +15,10 @@ def get_value(string):
 
 
 def change_third_sigh(list, sign):
-    new_list = []
+    new_string = ''
     for string in list:
-        new_list.append(sign + string[1:])
-    return new_list
+        new_string = new_string + '  ' + (sign + string[1:]) + '\n'
+    return new_string
 
 
 def generate_diff(file_1, file_2):
@@ -28,39 +28,34 @@ def generate_diff(file_1, file_2):
     second_dict.sort(key=lambda x: x.lower())
     first_index = 0
     second_index = 0
-    output = []
+    output = '{\n'
     while first_index != len(first_dict) or second_index != len(second_dict):
         if first_index == len(first_dict):
             rest_of_list = change_third_sigh(second_dict[second_index:], '+')
-            output.extend(rest_of_list)
+            output += rest_of_list
             break
         elif second_index == len(second_dict):
             rest_of_list = change_third_sigh(first_dict[first_index:], '-')
-            output.extend(rest_of_list)
+            output += rest_of_list
             break
         if first_dict[first_index] == second_dict[second_index]:
-            output.append(first_dict[first_index])
+            output += ('  ' + first_dict[first_index] + '\n')
             first_index += 1
             second_index += 1
         elif get_key(first_dict[first_index]) != get_key(second_dict[second_index]):
             temp_dict = [first_dict[first_index].lower(), second_dict[second_index].lower()]
             temp_dict.sort()
             if temp_dict[0] == first_dict[first_index].lower():
-                output.append(first_dict[first_index].replace('  ', '- '))
+                output += ('  ' + (first_dict[first_index].replace('  ', '- ')) + '\n')
                 first_index += 1
             else:
-                output.append(second_dict[second_index].replace('  ', '+ '))
+                output += ('  ' + (second_dict[second_index].replace('  ', '+ ')) + '\n')
                 second_index += 1
         else:
-            output.append('- ' + first_dict[first_index])
+            output += ('  ' + ('- ' + first_dict[first_index]) + '\n')
             first_index += 1
-            output.append('+ ' + second_dict[second_index])
+            output += ('  ' + ('+ ' + second_dict[second_index]) + '\n')
             second_index += 1
-    print('{')
-    for i in output:
-        print(' ', i)
-    print('}')
+    output += '}'
+    return output
 
-
-if __name__ == '__main__':
-    generate_diff(file_1, file_2)
