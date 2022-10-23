@@ -1,0 +1,9 @@
+{
+  - Aost: hexlet.io
+  - follow: false
+  - host: hexlet.io
+  - Hsost: hexlet.io
+  - proxy: 123.234.53.22
+  - timeout: 50
+  - zfollow: False
+}

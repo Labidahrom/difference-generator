@@ -24,6 +24,8 @@ def change_third_sigh(list, sign):
 def generate_diff(file_1, file_2):
     first_dict = make_dict_from_json(file_1)
     second_dict = make_dict_from_json(file_2)
+    if not first_dict and not second_dict:
+        return ''
     first_dict.sort(key=lambda x: x.lower())
     second_dict.sort(key=lambda x: x.lower())
     first_index = 0
@@ -52,10 +54,9 @@ def generate_diff(file_1, file_2):
                 output += ('  ' + (second_dict[second_index].replace('  ', '+ ')) + '\n')
                 second_index += 1
         else:
-            output += ('  ' + ('- ' + first_dict[first_index]) + '\n')
+            output += ('  ' + (first_dict[first_index].replace('  ', '- ')) + '\n')
             first_index += 1
-            output += ('  ' + ('+ ' + second_dict[second_index]) + '\n')
+            output += ('  ' + (second_dict[second_index].replace('  ', '+ ')) + '\n')
             second_index += 1
     output += '}'
     return output
-
