@@ -2,7 +2,8 @@ def make_dict_from_json(file):
     with open(file, 'r') as file:
         dict_from_json = []
         for index in file:
-            dict_from_json.append('  ' + index.strip().replace('\"', '').replace("\'", '').replace(",", ''))
+            dict_from_json.append('  ' + index.strip().replace('\"', '')
+                                  .replace("\'", '').replace(",", ''))
     return dict_from_json[1:-1]
 
 
@@ -44,19 +45,25 @@ def generate_diff(file_1, file_2):
             output += ('  ' + first_dict[first_index] + '\n')
             first_index += 1
             second_index += 1
-        elif get_key(first_dict[first_index]) != get_key(second_dict[second_index]):
-            temp_dict = [first_dict[first_index].lower(), second_dict[second_index].lower()]
+        elif get_key(first_dict[first_index]) \
+                != get_key(second_dict[second_index]):
+            temp_dict = [first_dict[first_index].lower(),
+                         second_dict[second_index].lower()]
             temp_dict.sort()
             if temp_dict[0] == first_dict[first_index].lower():
-                output += ('  ' + (first_dict[first_index].replace('  ', '- ')) + '\n')
+                output += ('  ' + (first_dict[first_index]
+                                   .replace('  ', '- ')) + '\n')
                 first_index += 1
             else:
-                output += ('  ' + (second_dict[second_index].replace('  ', '+ ')) + '\n')
+                output += ('  ' + (second_dict[second_index]
+                                   .replace('  ', '+ ')) + '\n')
                 second_index += 1
         else:
-            output += ('  ' + (first_dict[first_index].replace('  ', '- ')) + '\n')
+            output += ('  ' + (first_dict[first_index]
+                               .replace('  ', '- ')) + '\n')
             first_index += 1
-            output += ('  ' + (second_dict[second_index].replace('  ', '+ ')) + '\n')
+            output += ('  ' + (second_dict[second_index]
+                               .replace('  ', '+ ')) + '\n')
             second_index += 1
     output += '}'
     return output
