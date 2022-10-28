@@ -21,10 +21,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install poetry
-          make lint
+          make install
       - name: Run linter and pytest
         run: |
-          make check
+          make lint
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v2.7.4
         if: github.ref_name == 'main'
