@@ -11,7 +11,7 @@ package-install:
 	python3 -m pip install --user dist/*.whl --force-reinstall
 
 lint:
-	poetry run flake8 gendiff
+	poetry run flake8 --ignore=C901 gendiff
 
 test-coverage:
 	poetry run pytest --cov=gendiff tests/ --cov-report xml
