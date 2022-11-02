@@ -1,10 +1,4 @@
-def make_list_from_json(file):
-    with open(file, 'r') as file:
-        list_from_json = []
-        for index in file:
-            list_from_json.append(index.strip().replace('\"', '')
-                                  .replace("\'", '').replace(",", ''))
-    return list_from_json[1:-1]
+from gendiff.scripts.parser import get_data
 
 
 def add_sign(item, sign, num=''):
@@ -18,8 +12,8 @@ def clear_num(item):
 def generate_diff(file_1, file_2):
     output_list = []
     output_string = '{\n'
-    file_1_set = set(make_list_from_json(file_1))
-    file_2_set = set(make_list_from_json(file_2))
+    file_1_set = set(get_data(file_1))
+    file_2_set = set(get_data(file_2))
     if not file_1_set and not file_2_set:
         return ''
     file_1_items = file_1_set - file_2_set
@@ -30,4 +24,6 @@ def generate_diff(file_1, file_2):
     output_list.extend([add_sign(item, ' ') for item in file_1_file_2_items])
     output_list.sort(key=lambda x: x[4:].lower())
     output_list = list(map(clear_num, output_list))
-    return output_string + ''.join(output_list) + '}'
+    output = output_string + ''.join(output_list) + '}'
+    print(output)
+    return output

@@ -7,3 +7,5 @@
 ## Usage examples
 ### Get diffrence between two json files by cli command
 [![asciicast](https://asciinema.org/a/I5WzbjeyHCh4kIs0PacrSH6xm.svg)](https://asciinema.org/a/I5WzbjeyHCh4kIs0PacrSH6xm)
+### Get diffrence between two yaml files by cli command
+[![asciicast](https://asciinema.org/a/I5WzbjeyHCh4kIs0PacrSH6xm.svg)](https://asciinema.org/a/I5WzbjeyHCh4kIs0PacrSH6xm)
