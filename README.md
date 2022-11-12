@@ -9,5 +9,7 @@
 [![asciicast](https://asciinema.org/a/I5WzbjeyHCh4kIs0PacrSH6xm.svg)](https://asciinema.org/a/I5WzbjeyHCh4kIs0PacrSH6xm)
 ### Get diffrence between two yaml files by cli command
 [![asciicast](https://asciinema.org/a/I5WzbjeyHCh4kIs0PacrSH6xm.svg)](https://asciinema.org/a/I5WzbjeyHCh4kIs0PacrSH6xm)
-### Get diffrence between two nested yaml and json files by cli command
+### Get diffrence between two nested yaml or json files by cli command
 [![asciicast](https://asciinema.org/a/SLVVmi8wkspeH5ksw9AdMLjrj.svg)](https://asciinema.org/a/SLVVmi8wkspeH5ksw9AdMLjrj)
+### Get diffrence between two nested yaml or json files by cli command with plain format
+[![asciicast](https://asciinema.org/a/okoSKhdzH8GVdhJ7LLw5HwIwY.svg)](https://asciinema.org/a/okoSKhdzH8GVdhJ7LLw5HwIwY)
