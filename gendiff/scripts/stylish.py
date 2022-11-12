@@ -18,6 +18,11 @@ def get_sign(item, string):
         return string
 
 
+def replace_value(string):
+    return string.replace('None', 'null').replace('True', 'true').\
+        replace('False', 'false').strip()
+
+
 def make_stylish_string(data, level=4):
     if not data:
         return ''
@@ -36,5 +41,6 @@ def make_stylish_string(data, level=4):
 
 def make_stylish_data(data):
     sort_structure(data)
-    output = make_stylish_string(data).strip()
+    output = make_stylish_string(data)
+    output = replace_value(output)
     return output

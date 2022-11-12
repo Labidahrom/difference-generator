@@ -11,7 +11,10 @@ if args.format:
     print("set format of output")
 file_1 = args.first_file
 file_2 = args.second_file
+format_name = 'stylish'
+if args.format:
+    format_name = args.format
 
 
 def main():
-    generate_diff(file_1, file_2)
+    generate_diff(file_1, file_2, format_name)
