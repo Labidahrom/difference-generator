@@ -23,6 +23,31 @@ def make_item(item, file, level=0):
     return new_list
 
 
+def take_item_for_sort(item):
+    return str(item['key']) + str(item['file'])
+
+
+def sort_structure(list_):
+    for i in list_:
+        if isinstance(i['children'], list):
+            sort_structure(i['children'])
+    list_.sort(key=take_item_for_sort)
+
+
+def get_sign(item, string):
+    if item['file'] == 'file1':
+        return f'{string[:-2]}-{string[-1]}'
+    elif item['file'] == 'file2':
+        return f'{string[:-2]}+{string[-1]}'
+    else:
+        return string
+
+
+def replace_value(string):
+    return string.replace('None', 'null').replace('True', 'true').\
+        replace('False', 'false').strip()
+
+
 def check_key(key, list):
     for i in list:
         if i['key'] == key:
@@ -87,5 +112,4 @@ def make_diff_data(file1, file2):
     data1 = make_item(file1, 'file1')
     data2 = make_item(file2, 'file2')
     merged_data = merge(data1, data2)
-    change_sign(merged_data)
     return merged_data

@@ -1,18 +1,12 @@
-from gendiff.scripts.stylish import sort_structure
-from gendiff.scripts.stylish import replace_value
+from gendiff.scripts.create_diff import sort_structure
+from gendiff.scripts.create_diff import replace_value
+from gendiff.scripts.create_diff import change_sign
 
 
 def get_same_item(tree, key, value):
     for i in tree:
         if i['key'] == key and i['value'] != value:
             return i
-
-
-def check_if_updated(tree, key, value):
-    for i in tree:
-        if i['key'] == key:
-            return True
-        return False
 
 
 def define_value(item):
@@ -51,6 +45,7 @@ def make_plain(tree, path=''):
 
 
 def make_plain_data(data):
+    change_sign(data)
     sort_structure(data)
     output = make_plain(data)
     output = replace_value(output)

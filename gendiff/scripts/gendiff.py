@@ -7,8 +7,6 @@ parser.add_argument('first_file')
 parser.add_argument('second_file')
 parser.add_argument('-f', '--format', help="set format of output")
 args = parser.parse_args()
-if args.format:
-    print("set format of output")
 file_1 = args.first_file
 file_2 = args.second_file
 format_name = 'stylish'
