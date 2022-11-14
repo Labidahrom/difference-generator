@@ -9,6 +9,32 @@ This utility calculate differences between 2 files in json or yaml format. Diffe
 - stylish format (default). Shows all keys and values ​​from the first and second files, the status of the key is marked with a plus or minus, depending on whether it was added or removed. Nested keys are also displayed, even if they have not been modified in any way
 - plain format. Data about keys and their status is displayed as strings. If the key is not modified in any way, the nested keys are displayed as [complex value]
 - json format. Difference between two files is shown by json format
+## System requirements
+- Linux
+- Python (3.6 or later)
+- PIP
+- Poetry
+- GIT
+## Installation
+Open your terminal and type:
+```
+git clone https://github.com/Labidahrom/python-project-50
+cd python-project-50
+make package-install
+```
+## How to use
+To run with default stylish view:
+```
+gendiff file1 file2
+```
+To run with plain view:
+```
+gendiff file1 file2 -f plain
+```
+To run with json view:
+```
+gendiff file1 file2 -f json
+```
 ## Usage examples
 ### Get diffrence between two json files by cli command
 [![asciicast](https://asciinema.org/a/I5WzbjeyHCh4kIs0PacrSH6xm.svg)](https://asciinema.org/a/I5WzbjeyHCh4kIs0PacrSH6xm)
