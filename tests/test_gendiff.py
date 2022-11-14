@@ -15,6 +15,9 @@ def test_generate_diff_with_lesson_data_json_plain():
     assert generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json',
            'plain') == get_expected_result('tests/fixtures/output12_plain.txt')
 
+def test_generate_diff_with_lesson_data_json_json():
+    assert generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json',
+           'json') == get_expected_result('tests/fixtures/output12_json.txt')
 
 def test_generate_diff_with_empty_data_json():
     assert generate_diff('tests/fixtures/file3.json', 'tests/fixtures/file4.json') == \
@@ -28,6 +31,13 @@ def test_generate_diff_with_empty_data_json_plain():
             'plain') == get_expected_result('tests/fixtures/output34_plain.txt')
     assert generate_diff('tests/fixtures/file5.json', 'tests/fixtures/file6.json',
             'plain') == get_expected_result('tests/fixtures/output56_plain.txt')
+
+
+def test_generate_diff_with_empty_data_json_json():
+    assert generate_diff('tests/fixtures/file3.json', 'tests/fixtures/file4.json',
+            'json') == get_expected_result('tests/fixtures/output34_json.txt')
+    assert generate_diff('tests/fixtures/file5.json', 'tests/fixtures/file6.json',
+            'json') == get_expected_result('tests/fixtures/output56_json.txt')
 
 
 def test_generate_diff_with_upper_letters_json():
