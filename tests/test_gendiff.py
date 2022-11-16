@@ -19,6 +19,12 @@ def test_generate_diff_with_lesson_data_json_json():
     assert generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json',
            'json') == get_expected_result('tests/fixtures/output12_json.txt')
 
+
+def test_generate_diff_with_lesson_data_json_yaml():
+    assert generate_diff('tests/fixtures/file1.yaml', 'tests/fixtures/file2.yaml',
+           'json') == get_expected_result('tests/fixtures/output12_json.txt')
+
+
 def test_generate_diff_with_empty_data_json():
     assert generate_diff('tests/fixtures/file3.json', 'tests/fixtures/file4.json') == \
            get_expected_result('tests/fixtures/output34.txt')

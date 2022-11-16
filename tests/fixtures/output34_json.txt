@@ -1,2 +1,31 @@
-{
-}
+[
+  {
+    "key": "host",
+    "value": "hexlet.io",
+    "level": 0,
+    "children": "",
+    "file": "both"
+  },
+  {
+    "key": "timeout",
+    "value": 50,
+    "level": 0,
+    "children": "",
+    "file": "both"
+  },
+  {
+    "key": "proxy",
+    "value": "123.234.53.22",
+    "level": 0,
+    "children": "",
+    "file": "both"
+  },
+  {
+    "key": "follow",
+    "value": false,
+    "level": 0,
+    "children": "",
+    "file": "both"
+  }
+]
+

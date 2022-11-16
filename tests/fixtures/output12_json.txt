@@ -1,28 +1,230 @@
-{
-  "common": {
-    "follow": false,
-    "setting3": null,
-    "setting4": "blah blah",
-    "setting5": {
-      "key5": "value5"
-    },
-    "setting6": {
-      "doge": {
-        "wow": "so much"
+[
+  {
+    "key": "common",
+    "value": "",
+    "level": 0,
+    "children": [
+      {
+        "key": "setting1",
+        "value": "Value 1",
+        "level": 1,
+        "children": "",
+        "file": "both"
       },
-      "ops": "vops"
-    }
-  },
-  "group1": {
-    "baz": "bars",
-    "nest": "str"
-  },
-  "group3": {
-    "deep": {
-      "id": {
-        "number": 45
+      {
+        "key": "setting2",
+        "value": 200,
+        "level": 1,
+        "children": "",
+        "file": "file1"
+      },
+      {
+        "key": "setting3",
+        "value": true,
+        "level": 1,
+        "children": "",
+        "file": "file1"
+      },
+      {
+        "key": "setting6",
+        "value": "",
+        "level": 1,
+        "children": [
+          {
+            "key": "key",
+            "value": "value",
+            "level": 2,
+            "children": "",
+            "file": "both"
+          },
+          {
+            "key": "doge",
+            "value": "",
+            "level": 2,
+            "children": [
+              {
+                "key": "wow",
+                "value": "",
+                "level": 3,
+                "children": "",
+                "file": "file1"
+              },
+              {
+                "key": "wow",
+                "value": "so much",
+                "level": 3,
+                "children": "",
+                "file": "file2"
+              }
+            ],
+            "file": "both"
+          },
+          {
+            "key": "ops",
+            "value": "vops",
+            "level": 2,
+            "children": "",
+            "file": "file2"
+          }
+        ],
+        "file": "both"
+      },
+      {
+        "key": "follow",
+        "value": false,
+        "level": 1,
+        "children": "",
+        "file": "file2"
+      },
+      {
+        "key": "setting3",
+        "value": null,
+        "level": 1,
+        "children": "",
+        "file": "file2"
+      },
+      {
+        "key": "setting4",
+        "value": "blah blah",
+        "level": 1,
+        "children": "",
+        "file": "file2"
+      },
+      {
+        "key": "setting5",
+        "value": "",
+        "level": 1,
+        "children": [
+          {
+            "key": "key5",
+            "value": "value5",
+            "level": 2,
+            "children": "",
+            "file": "file2"
+          }
+        ],
+        "file": "file2"
       }
-    },
-    "fee": 100500
+    ],
+    "file": "both"
+  },
+  {
+    "key": "group1",
+    "value": "",
+    "level": 0,
+    "children": [
+      {
+        "key": "baz",
+        "value": "bas",
+        "level": 1,
+        "children": "",
+        "file": "file1"
+      },
+      {
+        "key": "foo",
+        "value": "bar",
+        "level": 1,
+        "children": "",
+        "file": "both"
+      },
+      {
+        "key": "nest",
+        "value": "",
+        "level": 1,
+        "children": [
+          {
+            "key": "key",
+            "value": "value",
+            "level": 2,
+            "children": "",
+            "file": "file1"
+          }
+        ],
+        "file": "file1"
+      },
+      {
+        "key": "baz",
+        "value": "bars",
+        "level": 1,
+        "children": "",
+        "file": "file2"
+      },
+      {
+        "key": "nest",
+        "value": "str",
+        "level": 1,
+        "children": "",
+        "file": "file2"
+      }
+    ],
+    "file": "both"
+  },
+  {
+    "key": "group2",
+    "value": "",
+    "level": 0,
+    "children": [
+      {
+        "key": "abc",
+        "value": 12345,
+        "level": 1,
+        "children": "",
+        "file": "file1"
+      },
+      {
+        "key": "deep",
+        "value": "",
+        "level": 1,
+        "children": [
+          {
+            "key": "id",
+            "value": 45,
+            "level": 2,
+            "children": "",
+            "file": "file1"
+          }
+        ],
+        "file": "file1"
+      }
+    ],
+    "file": "file1"
+  },
+  {
+    "key": "group3",
+    "value": "",
+    "level": 0,
+    "children": [
+      {
+        "key": "deep",
+        "value": "",
+        "level": 1,
+        "children": [
+          {
+            "key": "id",
+            "value": "",
+            "level": 2,
+            "children": [
+              {
+                "key": "number",
+                "value": 45,
+                "level": 3,
+                "children": "",
+                "file": "file2"
+              }
+            ],
+            "file": "file2"
+          }
+        ],
+        "file": "file2"
+      },
+      {
+        "key": "fee",
+        "value": 100500,
+        "level": 1,
+        "children": "",
+        "file": "file2"
+      }
+    ],
+    "file": "file2"
   }
-}
+]
