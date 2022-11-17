@@ -1,2 +1,5 @@
 *.pyc
 .venv
+dist
+coverage.xml
+.coverage
