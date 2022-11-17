@@ -1,8 +1,8 @@
-from gendiff.scripts.parser import get_data
-from gendiff.scripts.create_diff import make_diff_data
-from gendiff.scripts.stylish import make_stylish_data
-from gendiff.scripts.plain import make_plain_data
-from gendiff.scripts.json_m import make_json_data
+from gendiff.parser import get_data
+from gendiff.create_diff import make_diff_data
+from gendiff.formatters.stylish import make_stylish_data
+from gendiff.formatters.plain import make_plain_data
+from gendiff.formatters.json_m import make_json_data
 
 
 def generate_diff(file1, file2, format_name='stylish'):

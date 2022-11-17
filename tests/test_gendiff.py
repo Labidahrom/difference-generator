@@ -1,84 +1,51 @@
-from gendiff.scripts.make_gendiff import generate_diff
+from gendiff.make_gendiff import generate_diff
+import pytest
+
+PATH = 'tests/fixtures/'
+STYLISH_FORMATTER_DATA = \
+    [(f'{PATH}file1.json', f'{PATH}file2.json', f'{PATH}output12.txt'),
+     (f'{PATH}file1.yaml', f'{PATH}file2.yaml', f'{PATH}output12.txt'),
+     (f'{PATH}file3.json', f'{PATH}file4.json', f'{PATH}output34.txt'),
+     (f'{PATH}file3.yaml', f'{PATH}file4.yaml', f'{PATH}output34.txt'),
+     (f'{PATH}file5.json', f'{PATH}file6.json', f'{PATH}output56.txt'),
+     (f'{PATH}file5.yaml', f'{PATH}file6.yaml', f'{PATH}output56.txt'),
+     (f'{PATH}file7.json', f'{PATH}file8.json', f'{PATH}output78.txt'),
+     (f'{PATH}file7.yaml', f'{PATH}file8.yaml', f'{PATH}output78.txt')]
+PLAIN_FORMATTER_DATA = \
+    [(f'{PATH}file1.json', f'{PATH}file2.json', f'{PATH}output12_plain.txt'),
+     (f'{PATH}file1.yaml', f'{PATH}file2.yaml', f'{PATH}output12_plain.txt'),
+     (f'{PATH}file3.json', f'{PATH}file4.json', f'{PATH}output34_plain.txt'),
+     (f'{PATH}file3.yaml', f'{PATH}file4.yaml', f'{PATH}output34_plain.txt'),
+     (f'{PATH}file5.json', f'{PATH}file6.json', f'{PATH}output56_plain.txt'),
+     (f'{PATH}file5.yaml', f'{PATH}file6.yaml', f'{PATH}output56_plain.txt'),
+     (f'{PATH}file7.json', f'{PATH}file8.json', f'{PATH}output78_plain.txt'),
+     (f'{PATH}file7.yaml', f'{PATH}file8.yaml', f'{PATH}output78_plain.txt')]
+JSON_FORMATTER_DATA = \
+    [(f'{PATH}file1.json', f'{PATH}file2.json', f'{PATH}output12_json.txt'),
+     (f'{PATH}file1.yaml', f'{PATH}file2.yaml', f'{PATH}output12_json.txt'),
+     (f'{PATH}file3.json', f'{PATH}file4.json', f'{PATH}output34_json.txt'),
+     (f'{PATH}file3.yaml', f'{PATH}file4.yaml', f'{PATH}output34_json.txt'),
+     (f'{PATH}file5.json', f'{PATH}file6.json', f'{PATH}output56_json.txt'),
+     (f'{PATH}file5.yaml', f'{PATH}file6.yaml', f'{PATH}output56_json.txt'),
+     (f'{PATH}file7.json', f'{PATH}file8.json', f'{PATH}output78_json.txt'),
+     (f'{PATH}file7.yaml', f'{PATH}file8.yaml', f'{PATH}output78_json.txt')]
 
 
-def get_expected_result(file):
+def get_expect_result(file):
     with open(file) as expected_result:
         return expected_result.read().strip()
 
 
-def test_generate_diff_with_lesson_data_json():
-    assert generate_diff('tests/fixtures/file1.json',
-                         'tests/fixtures/file2.json') == \
-           get_expected_result('tests/fixtures/output12.txt')
+@pytest.mark.parametrize('file1,file2,output', STYLISH_FORMATTER_DATA)
+def test_stylish_formatter(file1, file2, output):
+    assert generate_diff(file1, file2) == get_expect_result(output)
 
 
-def test_generate_diff_with_lesson_data_json_plain():
-    assert generate_diff('tests/fixtures/file1.json',
-                         'tests/fixtures/file2.json', 'plain') == \
-           get_expected_result('tests/fixtures/output12_plain.txt')
+@pytest.mark.parametrize('file1,file2,output', PLAIN_FORMATTER_DATA)
+def test_plain_formatter(file1, file2, output):
+    assert generate_diff(file1, file2, 'plain') == get_expect_result(output)
 
 
-def test_generate_diff_with_lesson_data_json_json():
-    assert generate_diff('tests/fixtures/file1.json',
-                         'tests/fixtures/file2.json', 'json') ==\
-           get_expected_result('tests/fixtures/output12_json.txt')
-
-
-def test_generate_diff_with_lesson_data_json_yaml():
-    assert generate_diff('tests/fixtures/file1.yaml',
-                         'tests/fixtures/file2.yaml', 'json') ==\
-           get_expected_result('tests/fixtures/output12_json.txt')
-
-
-def test_generate_diff_with_empty_data_json():
-    assert generate_diff('tests/fixtures/file3.json',
-                         'tests/fixtures/file4.json') == \
-           get_expected_result('tests/fixtures/output34.txt')
-    assert generate_diff('tests/fixtures/file5.json',
-                         'tests/fixtures/file6.json') == \
-           get_expected_result('tests/fixtures/output56.txt')
-
-
-def test_generate_diff_with_empty_data_json_plain():
-    assert generate_diff('tests/fixtures/file3.json',
-                         'tests/fixtures/file4.json', 'plain') ==\
-           get_expected_result('tests/fixtures/output34_plain.txt')
-    assert generate_diff('tests/fixtures/file5.json',
-                         'tests/fixtures/file6.json', 'plain') ==\
-           get_expected_result('tests/fixtures/output56_plain.txt')
-
-
-def test_generate_diff_with_empty_data_json_json():
-    assert generate_diff('tests/fixtures/file3.json',
-                         'tests/fixtures/file4.json', 'json') ==\
-           get_expected_result('tests/fixtures/output34_json.txt')
-    assert generate_diff('tests/fixtures/file5.json',
-                         'tests/fixtures/file6.json', 'json') ==\
-           get_expected_result('tests/fixtures/output56_json.txt')
-
-
-def test_generate_diff_with_upper_letters_json():
-    assert generate_diff('tests/fixtures/file7.json',
-                         'tests/fixtures/file8.json') == \
-           get_expected_result('tests/fixtures/output78.txt')
-
-
-def test_generate_diff_with_lesson_data_yaml():
-    assert generate_diff('tests/fixtures/file1.yaml',
-                         'tests/fixtures/file2.yaml') == \
-           get_expected_result('tests/fixtures/output12.txt')
-
-
-def test_generate_diff_with_empty_data_yaml():
-    assert generate_diff('tests/fixtures/file3.yaml',
-                         'tests/fixtures/file4.yaml') == \
-           get_expected_result('tests/fixtures/output34.txt')
-    assert generate_diff('tests/fixtures/file5.yaml',
-                         'tests/fixtures/file6.yaml') == \
-           get_expected_result('tests/fixtures/output56.txt')
-
-
-def test_generate_diff_with_upper_letters_yaml():
-    assert generate_diff('tests/fixtures/file7.yaml',
-                         'tests/fixtures/file8.yaml') == \
-           get_expected_result('tests/fixtures/output78.txt')
+@pytest.mark.parametrize('file1,file2,output', JSON_FORMATTER_DATA)
+def test_json_formatter(file1, file2, output):
+    assert generate_diff(file1, file2, 'json') == get_expect_result(output)
