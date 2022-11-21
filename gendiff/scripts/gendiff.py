@@ -15,4 +15,4 @@ if args.format:
 
 
 def main():
-    generate_diff(file_1, file_2, format_name)
+    print(generate_diff(file_1, file_2, format_name))

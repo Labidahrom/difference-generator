@@ -26,6 +26,13 @@
         "file": "file1"
       },
       {
+        "key": "setting3",
+        "value": null,
+        "level": 1,
+        "children": "",
+        "file": "file2"
+      },
+      {
         "key": "setting6",
         "value": "",
         "level": 1,
@@ -77,13 +84,6 @@
         "file": "file2"
       },
       {
-        "key": "setting3",
-        "value": null,
-        "level": 1,
-        "children": "",
-        "file": "file2"
-      },
-      {
         "key": "setting4",
         "value": "blah blah",
         "level": 1,
@@ -121,6 +121,13 @@
         "file": "file1"
       },
       {
+        "key": "baz",
+        "value": "bars",
+        "level": 1,
+        "children": "",
+        "file": "file2"
+      },
+      {
         "key": "foo",
         "value": "bar",
         "level": 1,
@@ -141,13 +148,6 @@
           }
         ],
         "file": "file1"
-      },
-      {
-        "key": "baz",
-        "value": "bars",
-        "level": 1,
-        "children": "",
-        "file": "file2"
       },
       {
         "key": "nest",
