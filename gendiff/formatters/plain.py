@@ -29,13 +29,13 @@ def make_plain(tree, path=''):
             output += string
             tree.remove(update_item)
         else:
-            if item['children'] and item['file'] == 'both':
+            if item['children'] and item['action'] == 'same':
                 output += make_plain(item['children'],
                                      path=path + item['key'] + '.')
-            elif item['file'] == 'file1':
+            elif item['action'] == 'removed':
                 string = f"Property '{path + item['key']}' was removed\n"
                 output += string
-            elif item['file'] == 'file2':
+            elif item['action'] == 'added':
                 string = f"Property '{path + item['key']}' " \
                          f"was added with value: " \
                          f"{define_value(item)}\n"

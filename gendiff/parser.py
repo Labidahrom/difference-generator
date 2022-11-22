@@ -12,7 +12,6 @@ def read_file(file_path):
         elif file_ext == '.yaml' or file_ext == '.yml':
             return output, 'yml'
         else:
-            print(file_ext)
             raise Exception('This file type is not supported')
 
 

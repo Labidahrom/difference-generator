@@ -4,28 +4,29 @@
     "value": "hexlet.io",
     "level": 0,
     "children": "",
-    "file": "both"
+    "action": "same"
   },
   {
     "key": "timeout",
     "value": 50,
     "level": 0,
     "children": "",
-    "file": "both"
+    "action": "same"
   },
   {
     "key": "proxy",
     "value": "123.234.53.22",
     "level": 0,
     "children": "",
-    "file": "both"
+    "action": "same"
   },
   {
     "key": "follow",
     "value": false,
     "level": 0,
     "children": "",
-    "file": "both"
+    "action": "same"
   }
 ]
+
 

@@ -9,28 +9,28 @@
         "value": "Value 1",
         "level": 1,
         "children": "",
-        "file": "both"
+        "action": "same"
       },
       {
         "key": "setting2",
         "value": 200,
         "level": 1,
         "children": "",
-        "file": "file1"
+        "action": "removed"
       },
       {
         "key": "setting3",
         "value": true,
         "level": 1,
         "children": "",
-        "file": "file1"
+        "action": "removed"
       },
       {
         "key": "setting3",
         "value": null,
         "level": 1,
         "children": "",
-        "file": "file2"
+        "action": "added"
       },
       {
         "key": "setting6",
@@ -42,7 +42,7 @@
             "value": "value",
             "level": 2,
             "children": "",
-            "file": "both"
+            "action": "same"
           },
           {
             "key": "doge",
@@ -54,41 +54,41 @@
                 "value": "",
                 "level": 3,
                 "children": "",
-                "file": "file1"
+                "action": "removed"
               },
               {
                 "key": "wow",
                 "value": "so much",
                 "level": 3,
                 "children": "",
-                "file": "file2"
+                "action": "added"
               }
             ],
-            "file": "both"
+            "action": "same"
           },
           {
             "key": "ops",
             "value": "vops",
             "level": 2,
             "children": "",
-            "file": "file2"
+            "action": "added"
           }
         ],
-        "file": "both"
+        "action": "same"
       },
       {
         "key": "follow",
         "value": false,
         "level": 1,
         "children": "",
-        "file": "file2"
+        "action": "added"
       },
       {
         "key": "setting4",
         "value": "blah blah",
         "level": 1,
         "children": "",
-        "file": "file2"
+        "action": "added"
       },
       {
         "key": "setting5",
@@ -100,13 +100,13 @@
             "value": "value5",
             "level": 2,
             "children": "",
-            "file": "file2"
+            "action": "added"
           }
         ],
-        "file": "file2"
+        "action": "added"
       }
     ],
-    "file": "both"
+    "action": "same"
   },
   {
     "key": "group1",
@@ -118,21 +118,21 @@
         "value": "bas",
         "level": 1,
         "children": "",
-        "file": "file1"
+        "action": "removed"
       },
       {
         "key": "baz",
         "value": "bars",
         "level": 1,
         "children": "",
-        "file": "file2"
+        "action": "added"
       },
       {
         "key": "foo",
         "value": "bar",
         "level": 1,
         "children": "",
-        "file": "both"
+        "action": "same"
       },
       {
         "key": "nest",
@@ -144,20 +144,20 @@
             "value": "value",
             "level": 2,
             "children": "",
-            "file": "file1"
+            "action": "removed"
           }
         ],
-        "file": "file1"
+        "action": "removed"
       },
       {
         "key": "nest",
         "value": "str",
         "level": 1,
         "children": "",
-        "file": "file2"
+        "action": "added"
       }
     ],
-    "file": "both"
+    "action": "same"
   },
   {
     "key": "group2",
@@ -169,7 +169,7 @@
         "value": 12345,
         "level": 1,
         "children": "",
-        "file": "file1"
+        "action": "removed"
       },
       {
         "key": "deep",
@@ -181,13 +181,13 @@
             "value": 45,
             "level": 2,
             "children": "",
-            "file": "file1"
+            "action": "removed"
           }
         ],
-        "file": "file1"
+        "action": "removed"
       }
     ],
-    "file": "file1"
+    "action": "removed"
   },
   {
     "key": "group3",
@@ -209,22 +209,23 @@
                 "value": 45,
                 "level": 3,
                 "children": "",
-                "file": "file2"
+                "action": "added"
               }
             ],
-            "file": "file2"
+            "action": "added"
           }
         ],
-        "file": "file2"
+        "action": "added"
       },
       {
         "key": "fee",
         "value": 100500,
         "level": 1,
         "children": "",
-        "file": "file2"
+        "action": "added"
       }
     ],
-    "file": "file2"
+    "action": "added"
   }
 ]
+
