@@ -1,6 +1,5 @@
-from gendiff.create_diff import sort_structure
-from gendiff.create_diff import replace_value
-from gendiff.create_diff import change_sign
+from gendiff.creating_diff import sort_structure
+from gendiff.creating_diff import change_sign
 
 
 def get_same_item(tree, key, value):
@@ -48,5 +47,4 @@ def make_plain_data(data):
     change_sign(data)
     sort_structure(data)
     output = make_plain(data)
-    output = replace_value(output)
     return output

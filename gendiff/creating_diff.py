@@ -22,11 +22,6 @@ def get_index(item, given_list):
     return given_list.index(item)
 
 
-def replace_value(string):
-    return string.replace('None', 'null').replace('True', 'true'). \
-        replace('False', 'false').strip()
-
-
 def make_children_unsigned(tree):
     for i in range(len(tree['children'])):
         tree['children'][i]['file'] = 'both'
@@ -82,26 +77,26 @@ def make_complex_entry(key, value, level, file_parent):
     return new_dict
 
 
-def merge_data(file1, file2, level=0):
+def merge_data(content1, content2, level=0):
     new_list = []
-    for key, value in file1.items():
-        if key not in file2:
+    for key, value in content1.items():
+        if key not in content2:
             new_list.append(make_complex_entry(key, value, level, 'file1'))
-        elif key in file2 and file2[key] == value:
+        elif key in content2 and content2[key] == value:
             new_list.append(make_complex_entry(key, value, level, 'both'))
-            file2.pop(key)
-        elif key in file2 and file2[key] != value:
-            if isinstance(value, dict) and isinstance(file2[key], dict):
+            content2.pop(key)
+        elif key in content2 and content2[key] != value:
+            if isinstance(value, dict) and isinstance(content2[key], dict):
                 new_list.append(make_entry
                                 (key, '', level, merge_data
-                                    (value, file2[key], level + 1), 'both'))
+                                    (value, content2[key], level + 1), 'both'))
             else:
                 new_list.append(make_complex_entry
                                 (key, value, level, 'file1'))
                 new_list.append(make_complex_entry
-                                (key, file2[key], level, 'file2'))
-            file2.pop(key)
-    new_list.extend(make_list_entry(file2, 'file2', level))
+                                (key, content2[key], level, 'file2'))
+            content2.pop(key)
+    new_list.extend(make_list_entry(content2, 'file2', level))
     return new_list
 
 

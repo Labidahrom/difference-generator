@@ -1,9 +1,0 @@
----
-  "host": "hexlet.io"
-  "timeout": 50
-  "aost": "hexlet.io"
-  "proxy": "123.234.53.22"
-  "hsost": "hexlet.io"
-  "follow": false
-  "zfollow": false
-

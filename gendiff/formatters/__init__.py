@@ -3,6 +3,11 @@ from gendiff.formatters.plain import make_plain_data
 from gendiff.formatters.stylish import make_stylish_data
 
 
+def replace_value(string):
+    return string.replace('None', 'null').replace('True', 'true'). \
+        replace('False', 'false').strip()
+
+
 def make_format_data(data, format_name):
     if format_name == "plain":
         output = make_plain_data(data)
@@ -10,4 +15,5 @@ def make_format_data(data, format_name):
         output = make_json_data(data)
     else:
         output = make_stylish_data(data)
+    output = replace_value(output)
     return output

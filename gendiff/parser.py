@@ -1,14 +1,19 @@
 import yaml
 import json
+from os.path import splitext
 
 
 def read_file(file_path):
+    file_ext = splitext(file_path)[1]
     with open(file_path, 'r') as data:
         output = data.read()
-        if '.json' in file_path:
+        if file_ext == '.json':
             return output, 'json'
-        elif '.yaml' in file_path or '.yml' in file_path:
+        elif file_ext == '.yaml' or file_ext == '.yml':
             return output, 'yml'
+        else:
+            print(file_ext)
+            raise Exception('This file type is not supported')
 
 
 def parse_data(data, data_format):

@@ -1,7 +1,6 @@
-from gendiff.create_diff import sort_structure
-from gendiff.create_diff import replace_value
-from gendiff.create_diff import get_sign
-from gendiff.create_diff import change_sign
+from gendiff.creating_diff import sort_structure
+from gendiff.creating_diff import get_sign
+from gendiff.creating_diff import change_sign
 
 
 def make_stylish(data, level=4):
@@ -22,5 +21,4 @@ def make_stylish_data(data):
     change_sign(data)
     sort_structure(data)
     output = make_stylish(data)
-    output = replace_value(output)
     return output

@@ -1,7 +1,0 @@
-Property 'aost' was added with value: 'hexlet.io'
-Property 'follow' was added with value: false
-Property 'host' was added with value: 'hexlet.io'
-Property 'hsost' was added with value: 'hexlet.io'
-Property 'proxy' was added with value: '123.234.53.22'
-Property 'timeout' was added with value: 50
-Property 'zfollow' was added with value: false
