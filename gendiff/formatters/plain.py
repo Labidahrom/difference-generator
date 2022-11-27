@@ -1,7 +1,3 @@
-from gendiff.creating_diff import sort_structure
-from gendiff.creating_diff import change_sign
-
-
 def get_same_item(tree, key, value):
     for i in tree:
         if i['key'] == key and i['value'] != value:
@@ -9,7 +5,7 @@ def get_same_item(tree, key, value):
 
 
 def define_value(item):
-    if item['children']:
+    if isinstance(item['value'], dict):
         return '[complex value]'
     else:
         if isinstance(item['value'], str):
@@ -29,7 +25,7 @@ def make_plain(tree, path=''):
             output += string
             tree.remove(update_item)
         else:
-            if item['children'] and item['action'] == 'same':
+            if item['children'] and item['action'] == 'nested':
                 output += make_plain(item['children'],
                                      path=path + item['key'] + '.')
             elif item['action'] == 'removed':
@@ -44,7 +40,5 @@ def make_plain(tree, path=''):
 
 
 def make_plain_data(data):
-    change_sign(data)
-    sort_structure(data)
     output = make_plain(data)
     return output

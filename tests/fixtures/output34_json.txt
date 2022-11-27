@@ -1,32 +1,26 @@
 [
   {
-    "key": "host",
-    "value": "hexlet.io",
-    "level": 0,
-    "children": "",
-    "action": "same"
+    "key": "follow",
+    "value": false,
+    "action": "same",
+    "children": ""
   },
   {
-    "key": "timeout",
-    "value": 50,
-    "level": 0,
-    "children": "",
-    "action": "same"
+    "key": "host",
+    "value": "hexlet.io",
+    "action": "same",
+    "children": ""
   },
   {
     "key": "proxy",
     "value": "123.234.53.22",
-    "level": 0,
-    "children": "",
-    "action": "same"
+    "action": "same",
+    "children": ""
   },
   {
-    "key": "follow",
-    "value": false,
-    "level": 0,
-    "children": "",
-    "action": "same"
+    "key": "timeout",
+    "value": 50,
+    "action": "same",
+    "children": ""
   }
 ]
-
-

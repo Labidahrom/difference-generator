@@ -4,24 +4,21 @@ from os.path import splitext
 
 
 def read_file(file_path):
-    file_ext = splitext(file_path)[1]
+    _, file_ext = splitext(file_path)
     with open(file_path, 'r') as data:
         output = data.read()
-        if file_ext == '.json':
-            return output, 'json'
-        elif file_ext == '.yaml' or file_ext == '.yml':
-            return output, 'yml'
-        else:
-            raise Exception('This file type is not supported')
+        return output, file_ext[1:]
 
 
 def parse_data(data, data_format):
     output = {}
     if data:
-        if data_format == 'yml':
+        if data_format == 'yml' or data_format == 'yaml':
             output = yaml.safe_load(data)
-        elif data_format == 'json' and data:
+        elif data_format == 'json':
             output = json.loads(data)
+        else:
+            raise Exception('This file type is not supported')
     return output
 
 

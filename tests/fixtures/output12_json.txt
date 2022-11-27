@@ -2,230 +2,153 @@
   {
     "key": "common",
     "value": "",
-    "level": 0,
+    "action": "nested",
     "children": [
+      {
+        "key": "follow",
+        "value": false,
+        "action": "added",
+        "children": ""
+      },
       {
         "key": "setting1",
         "value": "Value 1",
-        "level": 1,
-        "children": "",
-        "action": "same"
+        "action": "same",
+        "children": ""
       },
       {
         "key": "setting2",
         "value": 200,
-        "level": 1,
-        "children": "",
-        "action": "removed"
+        "action": "removed",
+        "children": ""
       },
       {
         "key": "setting3",
         "value": true,
-        "level": 1,
-        "children": "",
-        "action": "removed"
+        "action": "removed",
+        "children": ""
       },
       {
         "key": "setting3",
         "value": null,
-        "level": 1,
-        "children": "",
-        "action": "added"
-      },
-      {
-        "key": "setting6",
-        "value": "",
-        "level": 1,
-        "children": [
-          {
-            "key": "key",
-            "value": "value",
-            "level": 2,
-            "children": "",
-            "action": "same"
-          },
-          {
-            "key": "doge",
-            "value": "",
-            "level": 2,
-            "children": [
-              {
-                "key": "wow",
-                "value": "",
-                "level": 3,
-                "children": "",
-                "action": "removed"
-              },
-              {
-                "key": "wow",
-                "value": "so much",
-                "level": 3,
-                "children": "",
-                "action": "added"
-              }
-            ],
-            "action": "same"
-          },
-          {
-            "key": "ops",
-            "value": "vops",
-            "level": 2,
-            "children": "",
-            "action": "added"
-          }
-        ],
-        "action": "same"
-      },
-      {
-        "key": "follow",
-        "value": false,
-        "level": 1,
-        "children": "",
-        "action": "added"
+        "action": "added",
+        "children": ""
       },
       {
         "key": "setting4",
         "value": "blah blah",
-        "level": 1,
-        "children": "",
-        "action": "added"
+        "action": "added",
+        "children": ""
       },
       {
         "key": "setting5",
+        "value": {
+          "key5": "value5"
+        },
+        "action": "added",
+        "children": ""
+      },
+      {
+        "key": "setting6",
         "value": "",
-        "level": 1,
+        "action": "nested",
         "children": [
           {
-            "key": "key5",
-            "value": "value5",
-            "level": 2,
-            "children": "",
-            "action": "added"
+            "key": "doge",
+            "value": "",
+            "action": "nested",
+            "children": [
+              {
+                "key": "wow",
+                "value": "",
+                "action": "removed",
+                "children": ""
+              },
+              {
+                "key": "wow",
+                "value": "so much",
+                "action": "added",
+                "children": ""
+              }
+            ]
+          },
+          {
+            "key": "key",
+            "value": "value",
+            "action": "same",
+            "children": ""
+          },
+          {
+            "key": "ops",
+            "value": "vops",
+            "action": "added",
+            "children": ""
           }
-        ],
-        "action": "added"
+        ]
       }
-    ],
-    "action": "same"
+    ]
   },
   {
     "key": "group1",
     "value": "",
-    "level": 0,
+    "action": "nested",
     "children": [
       {
         "key": "baz",
         "value": "bas",
-        "level": 1,
-        "children": "",
-        "action": "removed"
+        "action": "removed",
+        "children": ""
       },
       {
         "key": "baz",
         "value": "bars",
-        "level": 1,
-        "children": "",
-        "action": "added"
+        "action": "added",
+        "children": ""
       },
       {
         "key": "foo",
         "value": "bar",
-        "level": 1,
-        "children": "",
-        "action": "same"
+        "action": "same",
+        "children": ""
       },
       {
         "key": "nest",
-        "value": "",
-        "level": 1,
-        "children": [
-          {
-            "key": "key",
-            "value": "value",
-            "level": 2,
-            "children": "",
-            "action": "removed"
-          }
-        ],
-        "action": "removed"
+        "value": {
+          "key": "value"
+        },
+        "action": "removed",
+        "children": ""
       },
       {
         "key": "nest",
         "value": "str",
-        "level": 1,
-        "children": "",
-        "action": "added"
+        "action": "added",
+        "children": ""
       }
-    ],
-    "action": "same"
+    ]
   },
   {
     "key": "group2",
-    "value": "",
-    "level": 0,
-    "children": [
-      {
-        "key": "abc",
-        "value": 12345,
-        "level": 1,
-        "children": "",
-        "action": "removed"
-      },
-      {
-        "key": "deep",
-        "value": "",
-        "level": 1,
-        "children": [
-          {
-            "key": "id",
-            "value": 45,
-            "level": 2,
-            "children": "",
-            "action": "removed"
-          }
-        ],
-        "action": "removed"
+    "value": {
+      "abc": 12345,
+      "deep": {
+        "id": 45
       }
-    ],
-    "action": "removed"
+    },
+    "action": "removed",
+    "children": ""
   },
   {
     "key": "group3",
-    "value": "",
-    "level": 0,
-    "children": [
-      {
-        "key": "deep",
-        "value": "",
-        "level": 1,
-        "children": [
-          {
-            "key": "id",
-            "value": "",
-            "level": 2,
-            "children": [
-              {
-                "key": "number",
-                "value": 45,
-                "level": 3,
-                "children": "",
-                "action": "added"
-              }
-            ],
-            "action": "added"
-          }
-        ],
-        "action": "added"
+    "value": {
+      "deep": {
+        "id": {
+          "number": 45
+        }
       },
-      {
-        "key": "fee",
-        "value": 100500,
-        "level": 1,
-        "children": "",
-        "action": "added"
-      }
-    ],
-    "action": "added"
+      "fee": 100500
+    },
+    "action": "added",
+    "children": ""
   }
 ]
-
