@@ -13,7 +13,8 @@ def make_format_data(data, format_name):
         output = make_plain_data(data)
     elif format_name == 'json':
         output = make_json_data(data)
-    else:
+    elif format_name == 'stylish':
         output = make_stylish_data(data)
-    output = replace_value(output)
+    else:
+        raise Exception('This format type is not supported')
     return output

@@ -3,7 +3,7 @@ import json
 from os.path import splitext
 
 
-def read_file(file_path):
+def get_file_data_and_ext(file_path):
     _, file_ext = splitext(file_path)
     with open(file_path, 'r') as data:
         output = data.read()
@@ -23,6 +23,6 @@ def parse_data(data, data_format):
 
 
 def get_data(file_path):
-    data, data_format = (read_file(file_path))
+    data, data_format = (get_file_data_and_ext(file_path))
     output = parse_data(data, data_format)
     return output

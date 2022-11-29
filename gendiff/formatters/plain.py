@@ -1,3 +1,6 @@
+from gendiff.formatters.stylish import replace_value
+
+
 def get_same_item(tree, key, value):
     for i in tree:
         if i['key'] == key and i['value'] != value:
@@ -11,7 +14,7 @@ def define_value(item):
         if isinstance(item['value'], str):
             return f"'{item['value']}'"
         else:
-            return item['value']
+            return replace_value(item['value'])
 
 
 def make_plain(tree, path=''):
@@ -40,5 +43,5 @@ def make_plain(tree, path=''):
 
 
 def make_plain_data(data):
-    output = make_plain(data)
+    output = make_plain(data).strip()
     return output
