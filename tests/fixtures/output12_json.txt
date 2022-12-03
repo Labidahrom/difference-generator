@@ -1,145 +1,176 @@
 [
   {
     "key": "common",
+    "parent": "same",
     "value": "",
-    "action": "nested",
     "children": [
       {
         "key": "follow",
+        "parent": "added",
         "value": false,
-        "action": "added",
-        "children": ""
+        "children": "",
+        "old_value": "not_duplicated"
       },
       {
         "key": "setting1",
+        "parent": "same",
         "value": "Value 1",
-        "action": "same",
-        "children": ""
+        "children": "",
+        "old_value": "not_duplicated"
       },
       {
         "key": "setting2",
+        "parent": "removed",
         "value": 200,
-        "action": "removed",
-        "children": ""
+        "children": "",
+        "old_value": "not_duplicated"
       },
       {
         "key": "setting3",
+        "parent": "removed",
         "value": true,
-        "action": "removed",
-        "children": ""
+        "children": "",
+        "old_value": "duplicated"
       },
       {
         "key": "setting3",
+        "parent": "added",
         "value": null,
-        "action": "added",
-        "children": ""
+        "children": "",
+        "old_value": true
       },
       {
         "key": "setting4",
+        "parent": "added",
         "value": "blah blah",
-        "action": "added",
-        "children": ""
+        "children": "",
+        "old_value": "not_duplicated"
       },
       {
         "key": "setting5",
+        "parent": "added",
         "value": {
           "key5": "value5"
         },
-        "action": "added",
-        "children": ""
+        "children": "",
+        "old_value": "not_duplicated",
+        "action": "nested"
       },
       {
         "key": "setting6",
+        "parent": "same",
         "value": "",
-        "action": "nested",
         "children": [
           {
             "key": "doge",
+            "parent": "same",
             "value": "",
-            "action": "nested",
             "children": [
               {
                 "key": "wow",
+                "parent": "removed",
                 "value": "",
-                "action": "removed",
-                "children": ""
+                "children": "",
+                "old_value": "duplicated"
               },
               {
                 "key": "wow",
+                "parent": "added",
                 "value": "so much",
-                "action": "added",
-                "children": ""
+                "children": "",
+                "old_value": ""
               }
-            ]
+            ],
+            "old_value": "not_duplicated",
+            "action": "nested"
           },
           {
             "key": "key",
+            "parent": "same",
             "value": "value",
-            "action": "same",
-            "children": ""
+            "children": "",
+            "old_value": "not_duplicated"
           },
           {
             "key": "ops",
+            "parent": "added",
             "value": "vops",
-            "action": "added",
-            "children": ""
+            "children": "",
+            "old_value": "not_duplicated"
           }
-        ]
+        ],
+        "old_value": "not_duplicated",
+        "action": "nested"
       }
-    ]
+    ],
+    "old_value": "not_duplicated",
+    "action": "nested"
   },
   {
     "key": "group1",
+    "parent": "same",
     "value": "",
-    "action": "nested",
     "children": [
       {
         "key": "baz",
+        "parent": "removed",
         "value": "bas",
-        "action": "removed",
-        "children": ""
+        "children": "",
+        "old_value": "duplicated"
       },
       {
         "key": "baz",
+        "parent": "added",
         "value": "bars",
-        "action": "added",
-        "children": ""
+        "children": "",
+        "old_value": "bas"
       },
       {
         "key": "foo",
+        "parent": "same",
         "value": "bar",
-        "action": "same",
-        "children": ""
+        "children": "",
+        "old_value": "not_duplicated"
       },
       {
         "key": "nest",
+        "parent": "removed",
         "value": {
           "key": "value"
         },
-        "action": "removed",
-        "children": ""
+        "children": "",
+        "old_value": "duplicated",
+        "action": "nested"
       },
       {
         "key": "nest",
+        "parent": "added",
         "value": "str",
-        "action": "added",
-        "children": ""
+        "children": "",
+        "old_value": {
+          "key": "value"
+        }
       }
-    ]
+    ],
+    "old_value": "not_duplicated",
+    "action": "nested"
   },
   {
     "key": "group2",
+    "parent": "removed",
     "value": {
       "abc": 12345,
       "deep": {
         "id": 45
       }
     },
-    "action": "removed",
-    "children": ""
+    "children": "",
+    "old_value": "not_duplicated",
+    "action": "nested"
   },
   {
     "key": "group3",
+    "parent": "added",
     "value": {
       "deep": {
         "id": {
@@ -148,7 +179,8 @@
       },
       "fee": 100500
     },
-    "action": "added",
-    "children": ""
+    "children": "",
+    "old_value": "not_duplicated",
+    "action": "nested"
   }
 ]

@@ -1,10 +1,14 @@
-def make_entry(key, action, value, children):
-    return {
+def make_entry(key, parent, value, children, old_value='not_duplicated'):
+    output = {
         'key': key,
+        'parent': parent,
         'value': value,
-        'action': action,
-        'children': children
+        'children': children,
+        'old_value': old_value,
     }
+    if isinstance(value, dict) or isinstance(children, list):
+        output['action'] = 'nested'
+    return output
 
 
 def build_diff(content1, content2):
@@ -23,9 +27,11 @@ def build_diff(content1, content2):
             if isinstance(content1[key], dict) and \
                     isinstance(content2[key], dict):
                 output.append(make_entry
-                              (key, 'nested', '',
+                              (key, 'same', '',
                                build_diff(content1[key], content2[key])))
             else:
-                output.append(make_entry(key, 'removed', content1[key], ''))
-                output.append(make_entry(key, 'added', content2[key], ''))
+                output.append(make_entry(key, 'removed', content1[key],
+                                         '', 'duplicated'))
+                output.append(make_entry(key, 'added', content2[key],
+                                         '', content1[key]))
     return output

@@ -1,20 +1,13 @@
-from gendiff.formatters.json_m import make_json_data
-from gendiff.formatters.plain import make_plain_data
-from gendiff.formatters.stylish import make_stylish_data
+from gendiff.formatters.json_m import render_to_json
+from gendiff.formatters.plain import render_to_plain
+from gendiff.formatters.stylish import render_to_stylish
 
 
-def replace_value(string):
-    return string.replace('None', 'null').replace('True', 'true'). \
-        replace('False', 'false').strip()
-
-
-def make_format_data(data, format_name):
+def apply_format(data, format_name):
     if format_name == "plain":
-        output = make_plain_data(data)
+        return render_to_plain(data)
     elif format_name == 'json':
-        output = make_json_data(data)
+        return render_to_json(data)
     elif format_name == 'stylish':
-        output = make_stylish_data(data)
-    else:
-        raise Exception('This format type is not supported')
-    return output
+        return render_to_stylish(data)
+    raise Exception('This format type is not supported')

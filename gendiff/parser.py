@@ -11,14 +11,12 @@ def get_file_data_and_ext(file_path):
 
 
 def parse_data(data, data_format):
-    output = {}
-    if data:
-        if data_format == 'yml' or data_format == 'yaml':
-            output = yaml.safe_load(data)
-        elif data_format == 'json':
-            output = json.loads(data)
-        else:
-            raise Exception('This file type is not supported')
+    if data_format == 'yml' or data_format == 'yaml':
+        output = yaml.safe_load(data)
+    elif data_format == 'json':
+        output = json.loads(data)
+    else:
+        raise Exception('This file type is not supported')
     return output
 
 
