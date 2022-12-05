@@ -18,8 +18,8 @@ FORMATTER_ARGS = [
 ]
 
 
-def generate_fixture_path(string):
-    return f'{FIXTURES_PATH}{string}'
+def generate_fixture_path(file_name):
+    return f'{FIXTURES_PATH}{file_name}'
 
 
 def get_expect_result(file):

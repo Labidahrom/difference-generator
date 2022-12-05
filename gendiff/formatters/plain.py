@@ -22,20 +22,20 @@ def define_value(item):
 def make_plain(tree, path=''):
     output = []
     for item in tree:
-        if item['parent'] == 'removed' and item['old_value']\
+        if 'removed' in item['action'] and item['old_value']\
                 == 'not_duplicated':
             output.append(f"Property '{path + item['key']}' was removed")
-        elif item['parent'] == 'added' and item['old_value']\
+        elif 'added' in item['action'] and item['old_value']\
                 != 'not_duplicated':
             output.append(f"Property '{path + item['key']}' was updated. "
                           f"From {define_value(item['old_value'])} to "
                           f"{define_value(item['value'])}")
-        elif item['parent'] == 'added' and item['old_value'] \
+        elif 'added' in item['action'] and item['old_value'] \
                 == 'not_duplicated':
             output.append(f"Property '{path + item['key']}'"
                           f" was added with value: "
                           f"{define_value(item['value'])}")
-        elif item['parent'] == 'same' and item['children']:
+        elif 'same' in item['action'] and item['children']:
             output.append(make_plain(item['children'],
                                      path=path + item['key'] + '.'))
     return '\n'.join(output)

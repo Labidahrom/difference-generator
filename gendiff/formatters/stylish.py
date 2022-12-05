@@ -1,7 +1,7 @@
 def add_stylish_start(key):
-    if key['parent'] == 'added':
+    if 'added' in key['action']:
         output = '  + '
-    elif key['parent'] == 'removed':
+    elif 'removed' in key['action']:
         output = '  - '
     else:
         output = '    '
@@ -31,8 +31,8 @@ def make_stylish_nested_value(data, level):
 def make_stylish(data, level=0):
     output = ['{\n']
     for i in data:
-        if i.get('action') == 'nested':
-            if i['parent'] == 'same':
+        if 'nested' in i.get('action'):
+            if 'same' in i['action']:
                 output.append(f'{" " * level}{add_stylish_start(i)}'
                               f'{i["key"]}: ')
                 output.append(make_stylish(i['children'], level + 4))

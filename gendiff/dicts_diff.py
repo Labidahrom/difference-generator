@@ -1,13 +1,13 @@
-def make_entry(key, parent, value, children, old_value='not_duplicated'):
+def make_entry(key, action, value, children, old_value='not_duplicated'):
     output = {
         'key': key,
-        'parent': parent,
+        'action': action,
         'value': value,
         'children': children,
         'old_value': old_value,
     }
     if isinstance(value, dict) or isinstance(children, list):
-        output['action'] = 'nested'
+        output['action'] += '-nested'
     return output
 
 
