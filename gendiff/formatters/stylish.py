@@ -1,24 +1,23 @@
-def add_stylish_start(key):
-    if 'added' in key['action']:
-        output = '  + '
-    elif 'removed' in key['action']:
-        output = '  - '
-    else:
-        output = '    '
-    return output
+prefix_map = {
+    'added': '  + ',
+    'removed': '  - ',
+    'updated': '  - ',
+    'same': '    ',
+    'nested': '    '
+}
 
 
 def make_stylish_nested_value(data, level):
-    output = []
+    output = ['{\n']
     if isinstance(data, dict):
-        output.append('{\n')
         for i in data:
             if not isinstance(data[i], dict):
-                output.append(f'{" " * level}    {i}: {data[i]}\n')
+                output.append(f'{" " * level}    {i}: {data[i]}' + '\n')
             else:
                 output.append(f'{" " * level}    {i}: ')
-                output.append(make_stylish_nested_value(data[i], level + 4))
-        output.append((level * ' ') + '}' + '\n')
+                output.append(make_stylish_nested_value(data[i], level + 4)
+                              + '\n')
+        output.append((level * ' ') + '}')
     elif isinstance(data, bool):
         return str(data).lower()
     elif data is None:
@@ -31,19 +30,14 @@ def make_stylish_nested_value(data, level):
 def make_stylish(data, level=0):
     output = ['{\n']
     for i in data:
-        if 'nested' in i.get('action'):
-            if 'same' in i['action']:
-                output.append(f'{" " * level}{add_stylish_start(i)}'
-                              f'{i["key"]}: ')
-                output.append(make_stylish(i['children'], level + 4))
-            else:
-                output.append(f'{" " * level}{add_stylish_start(i)}'
-                              f'{i["key"]}: ')
-                output.append(make_stylish_nested_value(i['value'],
-                                                        level + 4))
+        if i['action'] == 'nested':
+            output.append(f'{" " * level}{prefix_map[i["action"]]}'
+                          f'{i["key"]}: ')
+            output.append(make_stylish(i['children'], level + 4))
         else:
-            output.append(f'{" " * level}{add_stylish_start(i)}{i["key"]}:'
-                          f' {make_stylish_nested_value(i["value"], level)}\n')
+            output.append(f'{" " * level}{prefix_map[i["action"]]}{i["key"]}:'
+                          f' {make_stylish_nested_value(i["value"], level+4)}'
+                          f'\n')
     output.append((level * ' ') + '}' + '\n')
     return ''.join(output)
 
