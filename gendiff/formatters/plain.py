@@ -7,6 +7,8 @@ def define_value(item):
         return str(item).lower()
     if item is None:
         return 'null'
+    else:
+        return item
 
 
 def make_plain(tree, path=''):
