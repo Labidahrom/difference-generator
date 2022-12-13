@@ -4,27 +4,27 @@
     "action": "same",
     "value": false,
     "children": "",
-    "old_value": "no"
+    "old_value": ""
   },
   {
     "key": "host",
     "action": "same",
     "value": "hexlet.io",
     "children": "",
-    "old_value": "no"
+    "old_value": ""
   },
   {
     "key": "proxy",
     "action": "same",
     "value": "123.234.53.22",
     "children": "",
-    "old_value": "no"
+    "old_value": ""
   },
   {
     "key": "timeout",
     "action": "same",
     "value": 50,
     "children": "",
-    "old_value": "no"
+    "old_value": ""
   }
 ]

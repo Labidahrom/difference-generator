@@ -17,8 +17,7 @@ def build_diff(content1, content2):
         if key in removed:
             output.append(make_entry(key, 'removed', content1[key], ''))
         elif key in added:
-            output.append(make_entry(key, 'added', content2[key], '',
-                                     content2[key]))
+            output.append(make_entry(key, 'added', content2[key], ''))
         elif content1[key] == content2[key]:
             output.append(make_entry(key, 'same', content1[key], ''))
         else:

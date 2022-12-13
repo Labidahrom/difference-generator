@@ -16,7 +16,8 @@ def make_plain(tree, path=''):
     for item in tree:
         if item['action'] == 'removed':
             output.append(f"Property '{path + item['key']}' was removed")
-        elif item['action'] == 'added' and item['old_value'] != 'no':
+        elif item['action'] == 'added' and\
+                item['old_value'] != item['value']:
             output.append(f"Property '{path + item['key']}' was updated. "
                           f"From {define_value(item['old_value'])} to "
                           f"{define_value(item['value'])}")

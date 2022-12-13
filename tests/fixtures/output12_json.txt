@@ -9,28 +9,28 @@
         "action": "added",
         "value": false,
         "children": "",
-        "old_value": "no"
+        "old_value": false
       },
       {
         "key": "setting1",
         "action": "same",
         "value": "Value 1",
         "children": "",
-        "old_value": "no"
+        "old_value": ""
       },
       {
         "key": "setting2",
         "action": "removed",
         "value": 200,
         "children": "",
-        "old_value": "no"
+        "old_value": ""
       },
       {
         "key": "setting3",
         "action": "updated",
         "value": true,
         "children": "",
-        "old_value": "no"
+        "old_value": ""
       },
       {
         "key": "setting3",
@@ -44,7 +44,7 @@
         "action": "added",
         "value": "blah blah",
         "children": "",
-        "old_value": "no"
+        "old_value": "blah blah"
       },
       {
         "key": "setting5",
@@ -53,7 +53,9 @@
           "key5": "value5"
         },
         "children": "",
-        "old_value": "no"
+        "old_value": {
+          "key5": "value5"
+        }
       },
       {
         "key": "setting6",
@@ -70,7 +72,7 @@
                 "action": "updated",
                 "value": "",
                 "children": "",
-                "old_value": "no"
+                "old_value": ""
               },
               {
                 "key": "wow",
@@ -80,27 +82,27 @@
                 "old_value": ""
               }
             ],
-            "old_value": "no"
+            "old_value": ""
           },
           {
             "key": "key",
             "action": "same",
             "value": "value",
             "children": "",
-            "old_value": "no"
+            "old_value": ""
           },
           {
             "key": "ops",
             "action": "added",
             "value": "vops",
             "children": "",
-            "old_value": "no"
+            "old_value": "vops"
           }
         ],
-        "old_value": "no"
+        "old_value": ""
       }
     ],
-    "old_value": "no"
+    "old_value": ""
   },
   {
     "key": "group1",
@@ -112,7 +114,7 @@
         "action": "updated",
         "value": "bas",
         "children": "",
-        "old_value": "no"
+        "old_value": ""
       },
       {
         "key": "baz",
@@ -126,7 +128,7 @@
         "action": "same",
         "value": "bar",
         "children": "",
-        "old_value": "no"
+        "old_value": ""
       },
       {
         "key": "nest",
@@ -135,7 +137,7 @@
           "key": "value"
         },
         "children": "",
-        "old_value": "no"
+        "old_value": ""
       },
       {
         "key": "nest",
@@ -147,7 +149,7 @@
         }
       }
     ],
-    "old_value": "no"
+    "old_value": ""
   },
   {
     "key": "group2",
@@ -159,7 +161,7 @@
       }
     },
     "children": "",
-    "old_value": "no"
+    "old_value": ""
   },
   {
     "key": "group3",
@@ -173,7 +175,14 @@
       "fee": 100500
     },
     "children": "",
-    "old_value": "no"
+    "old_value": {
+      "deep": {
+        "id": {
+          "number": 45
+        }
+      },
+      "fee": 100500
+    }
   }
 ]
 
